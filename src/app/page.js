@@ -16,7 +16,7 @@ export default function Home() {
     isPreviousData,
   } = useQuery({
     queryKey: ["/pokemon", page],
-    queryFn: () => fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL || process.env.NEXT_PUBLIC_DEVELOPMENT}/api/pokemon/page/${page}`).then((res) => res.json()),
+    queryFn: () => fetch(`${process.env.NEXT_PUBLIC_URL}/api/pokemon/page/${page}`).then((res) => res.json()),
     keepPreviousData: true,
   });
 
