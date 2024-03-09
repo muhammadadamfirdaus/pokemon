@@ -38,11 +38,9 @@ export default function Home() {
           const pokemonID = getID[0];
           // console.log(pokemon.url, getID);
           return (
-            <>
-              <Link key={i} href={`/pokemon/${pokemon.name}`}>
-                <Pokemons name={pokemon.name} url={pokemon.url} pokemonID={pokemonID} />
-              </Link>
-            </>
+            <Link key={i} href={`/pokemon/${pokemon.name}`}>
+              <Pokemons name={pokemon.name} url={pokemon.url} pokemonID={pokemonID} />
+            </Link>
           );
         })}
       </div>
@@ -51,8 +49,8 @@ export default function Home() {
         <button className="p-2 border border-black" onClick={firstPage} disabled={isPreviousData || page === 1}>
           &lt;&lt;
         </button>
-        {pagesArray.map((pg) => (
-          <button className="p-2 border border-black" onClick={() => setPage(pg)}>
+        {pagesArray.map((pg, i) => (
+          <button className="p-2 border border-black" onClick={() => setPage(pg)} key={i}>
             {pg}
           </button>
         ))}
